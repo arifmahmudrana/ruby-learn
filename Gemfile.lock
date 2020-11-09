@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    dish (0.0.6)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  dish (~> 0.0.6)
+
+BUNDLED WITH
+   2.1.2
