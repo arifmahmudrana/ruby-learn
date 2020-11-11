@@ -49,10 +49,10 @@ end
 
 # p merge_sort([1, 4, 2, 1, 3])
 
-require 'prime'
+# require 'prime'
 
-prime_array = Prime.take_while { |p| p < 2_000_000 }
-total_count = prime_array.inject { |sum, x| sum + x }
+# prime_array = Prime.take_while { |p| p < 2_000_000 }
+# total_count = prime_array.inject { |sum, x| sum + x }
 # p total_count # 142913828922
 
 # p(2**1000).to_s.split('').map(&:to_i).inject(:+)
@@ -66,5 +66,26 @@ total_count = prime_array.inject { |sum, x| sum + x }
 # end
 
 # { |sum, x| sum + x.delete(' ').delete('-').length }
-require 'humanize'
-p((57..60).to_a.map(&:humanize).inject(0) { |sum, x| sum + x.delete(' ').delete('-').length })
+# require 'humanize'
+# p((57..60).to_a.map(&:humanize).inject(0) { |sum, x| sum + x.delete(' ').delete('-').length })
+
+# require 'date'
+
+# start_date = Time.local(1901)
+# end_date = Time.local(2000, 12)
+# sundays = 0
+
+# while start_date < end_date
+#   year = start_date.year
+#   month = start_date.month + 1
+
+#   sundays += 1 if start_date.sunday?
+#   if month > 12
+#     year += 1
+#     month = 1
+#   end
+
+#   start_date = Time.local(year, month)
+# end
+
+# puts sundays
