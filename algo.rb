@@ -47,4 +47,24 @@ def merge(left, right)
   end
 end
 
-p merge_sort([1, 4, 2, 1, 3])
+# p merge_sort([1, 4, 2, 1, 3])
+
+require 'prime'
+
+prime_array = Prime.take_while { |p| p < 2_000_000 }
+total_count = prime_array.inject { |sum, x| sum + x }
+# p total_count # 142913828922
+
+# p(2**1000).to_s.split('').map(&:to_i).inject(:+)
+
+# (5..10).inject(2) do |product, n|
+#   print 'product ', product
+#   puts ''
+#   print 'n ', n
+#   puts ''
+#   product * n
+# end
+
+# { |sum, x| sum + x.delete(' ').delete('-').length }
+require 'humanize'
+p((57..60).to_a.map(&:humanize).inject(0) { |sum, x| sum + x.delete(' ').delete('-').length })

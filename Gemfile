@@ -11,3 +11,5 @@ gem "dish", "~> 0.0.6"
 gem "ostruct", "~> 0.3.1"
 
 gem "httparty", "~> 0.18.1"
+
+gem "humanize", "~> 2.5"
