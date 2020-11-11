@@ -10,7 +10,7 @@ def buble(arr)
   arr
 end
 
-p buble([1, 4, 2, 1, 3])
+# p buble([1, 4, 2, 1, 3])
 
 class Array
   def quick_sort
@@ -23,4 +23,28 @@ class Array
   end
 end
 
-p [1, 4, 2, 1, 3].quick_sort
+# p [1, 4, 2, 1, 3].quick_sort
+
+def merge_sort(list)
+  list_len = list.length
+  if list_len <= 1
+    list
+  else
+    mid = (list_len / 2).floor
+    merge(merge_sort(list[0..mid - 1]), merge_sort(list[mid..list_len]))
+  end
+end
+
+def merge(left, right)
+  if left.empty?
+    right
+  elsif right.empty?
+    left
+  elsif left.first < right.first
+    [left.first] + merge(left[1..left.length], right)
+  else
+    [right.first] + merge(left, right[1..right.length])
+  end
+end
+
+p merge_sort([1, 4, 2, 1, 3])
