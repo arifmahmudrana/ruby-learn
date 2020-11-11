@@ -104,4 +104,6 @@ def fib_digit_counter
   num1
 end
 
-puts fib_digit_counter
+# puts fib_digit_counter
+
+p((0..9).to_a.permutation.to_a.last.join)
