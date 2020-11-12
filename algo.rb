@@ -106,4 +106,43 @@ end
 
 # puts fib_digit_counter
 
-p((0..9).to_a.permutation.to_a.last.join)
+# p((0..9).to_a.permutation.to_a.last.join)
+
+require 'prime'
+
+class Integer
+  def dsum
+    return 1 if self < 2
+
+    pd = Prime.prime_division(self).flat_map { |n, p| [n] * p }
+
+    # Returns the sum of all the numbers that be divided
+    # e.g 8 can be divided by 1, 2, 4
+    # or e.g 15 can be divided by 1, 3, 5
+    # Now for 15 this function returns 1 + 3 + 5 = 9
+    ([1] + (1...pd.size).flat_map { |e| pd.combination(e).map { |f| f.reduce(:*) } }).uniq.inject(:+)
+  end
+end
+
+# Sum of all amicable pairs
+# Amicable pairs are thoose numbers whoose sum of all divisors are same
+# but sum of all divisors and number will not be same
+# e.g 6 has three divisors [1, 2, 3] so it's sum of divisors is 6 so this number can't be paired
+# but e.g 220 sum of divisors is 284 & 284 sum of divisors is 220 so can are pair of amicable numbers
+def find_d_sum(n)
+  n.times.inject do |sum, cur|
+    other = cur.dsum
+    # puts "cur = '#{cur}' other = '#{other}'" if cur == other
+    # if cur != other && other.dsum == cur
+    #   puts "cur != cur.dsum && cur.dsum.dsum == cur => sum = '#{sum}' cur = '#{cur}'"
+    #   sum + cur
+    # else
+    #   sum
+    # end
+    cur != other && other.dsum == cur ? sum + cur : sum
+  end
+end
+
+# p 220.dsum
+# p 284.dsum
+# p find_d_sum(10_000)
