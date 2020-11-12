@@ -146,3 +146,10 @@ end
 # p 220.dsum
 # p 284.dsum
 # p find_d_sum(10_000)
+
+def fac_val_sum(fac)
+  (1..fac).to_a.reverse.each { |i| fac += fac * (i - 1) }
+  fac.to_s.split('').map(&:to_i).inject(:+)
+end
+
+# p fac_val_sum(100)
