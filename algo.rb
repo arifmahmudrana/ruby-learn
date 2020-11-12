@@ -153,3 +153,26 @@ def fac_val_sum(fac)
 end
 
 # p fac_val_sum(100)
+
+class EvenFib
+  def initialize(max)
+    @num1 = 0
+    @i = 0
+    @sum = 0
+    @num2 = 1
+    @max = max
+  end
+
+  def sum
+    while @i <= @max
+      @i = @num1 + @num2
+      @sum += @i if @i.even?
+      @num1 = @num2
+      @num2 = @i
+    end
+
+    @sum
+  end
+end
+
+# p(EvenFib.new(4_000_000).sum)
