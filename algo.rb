@@ -177,4 +177,15 @@ end
 
 # p(EvenFib.new(4_000_000).sum)
 
-p((1..20).to_a.reduce(:lcm))
+# p((1..20).to_a.reduce(:lcm))
+
+require 'date'
+
+dte = Time.local(2019, 12, 27)
+loop do
+  if dte.tuesday?
+    puts dte
+    break
+  end
+  dte = Time.local(dte.year - 1, 12, 27)
+end
