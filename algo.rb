@@ -180,7 +180,9 @@ end
 # p((1..20).to_a.reduce(:lcm))
 
 require 'date'
-
+# =begin
+#   Multi line comment begin end starts with =begin and ends with =end
+# =end
 dte = Time.local(2019, 12, 27)
 loop do
   if dte.tuesday?
