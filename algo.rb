@@ -176,3 +176,5 @@ class EvenFib
 end
 
 # p(EvenFib.new(4_000_000).sum)
+
+p((1..20).to_a.reduce(:lcm))
