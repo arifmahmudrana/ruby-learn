@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Local
 # 10.times do
 #   x = 10
@@ -13,7 +15,7 @@
 # An instance variable in ruby has a name starting with @ symbol, and its content is restricted to whatever the object itself refers to. Two separate objects, even though they belong to the same class, are allowed to have different values for their instance variables.
 
 # CONST
-# A_CONST = 10  
+# A_CONST = 10
 # A_CONST = 20
 
 # p A_CONST
@@ -43,3 +45,11 @@
 
 # cust1.total_no_of_customers()
 # cust2.total_no_of_customers()
+
+def value_count(hash, value)
+  hash.select { |_k, v| v == value }.length
+end
+hash = { a: 5, b: 2, c: 3, d: 5 }
+p value_count(hash, 5)
+p value_count(hash, 2)
+p value_count(hash, 0)
